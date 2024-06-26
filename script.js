@@ -4,6 +4,10 @@ let leftPressed = false;
 let rightPressed = false;
 let lives = 2;
 
+const arrowKeys = document.getElementsByClassName('controls');
+if (arrowKeys.length > 0) {
+    arrowKeys[0].style.display = "none";
+}
 
 const main = document.querySelector('main');
 
@@ -169,17 +173,17 @@ function enemySpeed(speed) {
                     btmR = document.elementFromPoint(enemyPos.right, newBottom);
     
                     let hitEnemyBottom = false;
-                    for (const surrondingEnemy of enemies) {
-                        if (surrondingEnemy !== enemy) {
-                            let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
-                            if (enemyPos.left < surrodningEnemyPos.right &&
-                                enemyPos.right > surrodningEnemyPos.left &&
-                                newBottom < surrodningEnemyPos.top &&
-                                enemyPos.top < surrodningEnemyPos.bottom) {
-                                hitEnemyBottom = true;
-                            }
-                        }
-                    };
+                    // for (const surrondingEnemy of enemies) {
+                    //     if (surrondingEnemy !== enemy) {
+                    //         let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
+                    //         if (enemyPos.left < surrodningEnemyPos.right &&
+                    //             enemyPos.right > surrodningEnemyPos.left &&
+                    //             newBottom < surrodningEnemyPos.top &&
+                    //             enemyPos.top < surrodningEnemyPos.bottom) {
+                    //             hitEnemyBottom = true;
+                    //         }
+                    //     }
+                    // };
     
                     if (!hitEnemyBottom && btmL.classList.contains('wall') == false && btmR.classList.contains('wall') == false) {
                         enemyTop++;
@@ -194,17 +198,17 @@ function enemySpeed(speed) {
                     topR = document.elementFromPoint(enemyPos.right, newTop);
     
                     let hitEnemyTop = false;
-                    for (const surrondingEnemy of enemies) {
-                        if (surrondingEnemy !== enemy) {
-                            let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
-                            if (enemyPos.left < surrodningEnemyPos.right &&
-                                enemyPos.right > surrodningEnemyPos.left &&
-                                newTop < surrodningEnemyPos.bottom &&
-                                enemyPos.bottom > surrodningEnemyPos.top) {
-                                hitEnemyTop = true;
-                            }
-                        }
-                    };
+                    // for (const surrondingEnemy of enemies) {
+                    //     if (surrondingEnemy !== enemy) {
+                    //         let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
+                    //         if (enemyPos.left < surrodningEnemyPos.right &&
+                    //             enemyPos.right > surrodningEnemyPos.left &&
+                    //             newTop < surrodningEnemyPos.bottom &&
+                    //             enemyPos.bottom > surrodningEnemyPos.top) {
+                    //             hitEnemyTop = true;
+                    //         }
+                    //     }
+                    // };
                     if (!hitEnemyTop && topL.classList.contains('wall') == false && topR.classList.contains('wall') == false) {
                         enemyTop--;
                     } else {
@@ -218,17 +222,17 @@ function enemySpeed(speed) {
                     leftBottom = document.elementFromPoint(newLeft, enemyPos.bottom);
     
                     let hitEnemyLeft = false;
-                    for (const surrondingEnemy of enemies) {
-                        if (surrondingEnemy !== enemy) {
-                            let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
-                            if (enemyPos.top < surrodningEnemyPos.bottom &&
-                                enemyPos.bottom > surrodningEnemyPos.top &&
-                                newLeft < surrodningEnemyPos.right &&
-                                enemyPos.right > surrodningEnemyPos.left) {
-                                hitEnemyLeft = true;
-                            }
-                        }
-                    };
+                    // for (const surrondingEnemy of enemies) {
+                    //     if (surrondingEnemy !== enemy) {
+                    //         let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
+                    //         if (enemyPos.top < surrodningEnemyPos.bottom &&
+                    //             enemyPos.bottom > surrodningEnemyPos.top &&
+                    //             newLeft < surrodningEnemyPos.right &&
+                    //             enemyPos.right > surrodningEnemyPos.left) {
+                    //             hitEnemyLeft = true;
+                    //         }
+                    //     }
+                    // };
                     if (!hitEnemyLeft && leftTop.classList.contains('wall') == false && leftBottom.classList.contains('wall') == false) {
                         enemyLeft--;
                     } else {
@@ -242,17 +246,17 @@ function enemySpeed(speed) {
                     rightBottom = document.elementFromPoint(newRight, enemyPos.bottom);
     
                     let hitEnemyRight = false;
-                    for (const surrondingEnemy of enemies) {
-                        if (surrondingEnemy !== enemy) {
-                            let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
-                            if (enemyPos.top < surrodningEnemyPos.bottom &&
-                                enemyPos.bottom > surrodningEnemyPos.top &&
-                                newRight > surrodningEnemyPos.left &&
-                                enemyPos.left < surrodningEnemyPos.right) {
-                                hitEnemyRight = true;
-                            }
-                        }
-                    };
+                    // for (const surrondingEnemy of enemies) {
+                    //     if (surrondingEnemy !== enemy) {
+                    //         let surrodningEnemyPos = surrondingEnemy.getBoundingClientRect();
+                    //         if (enemyPos.top < surrodningEnemyPos.bottom &&
+                    //             enemyPos.bottom > surrodningEnemyPos.top &&
+                    //             newRight > surrodningEnemyPos.left &&
+                    //             enemyPos.left < surrodningEnemyPos.right) {
+                    //             hitEnemyRight = true;
+                    //         }
+                    //     }
+                    // };
                     if (!hitEnemyRight && rightTop.classList.contains('wall') == false && rightBottom.classList.contains('wall') == false) {
                         enemyLeft++;
                     } else {
